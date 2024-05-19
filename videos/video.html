@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="/images/gsw-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Video Player</title>
+</head>
+<body>
+    <nav class="nav">
+        <img class="logo" src="/images/logo.png">
+    </nav>
+    <div id="video-container"></div>
+    <h1 id="video-title"></h1>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3><span style="font-size:x-large; font-weight:900;">Contact&nbsp;Us</span></h3>
+                <p>Rame Isaka 17, BiH</p>
+                <p>Sarajevo, 71000</p>
+                <p>Email: info@poprativ.com</p>
+                <p>Phone: +387/60-32-39-54</p>
+            </div>
+            <div class="social-icons">
+                <a href="" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+                <a href="" target="_blank"><img src="/images/x.png" alt="X"></a>
+                <a href="" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+                <a href="" target="_blank"><img src="/images/youtube.png" alt="You Tube"></a>
+                <a href="" target="_blank"><img src="/images/tiktok.png" alt="Tik Tok"></a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 PopravIT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('id');
+        const videoTitle = urlParams.get('title');
+
+        // Set video title
+        document.getElementById('video-title').textContent = decodeURIComponent(videoTitle);
+
+        // Embed YouTube video
+        const videoContainer = document.getElementById('video-container');
+        videoContainer.innerHTML = `
+            <iframe width='70%' height="450" src="https://www.youtube-nocookie.com/embed/${videoId}" title="${videoTitle}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        `;
+    </script>
+</body>
+</html>

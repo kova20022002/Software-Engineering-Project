@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/images/gsw-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Automotive</title>
+    <style>
+        
+        
+    </style>
+</head>
+<body>
+    <h1 style="padding-top: 15vh; text-align: center;">Automotive</h1>
+    <nav class="nav">
+
+        <img class="logo" src="/images/logo.png">
+    
+</nav>
+    <div id="video-list">
+        
+    </div>
+
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3><span style="font-size:x-large; font-weight:900;">Contact&nbsp;Us</span></h3>
+                <p>Rame Isaka 17, BiH</p>
+                <p>Sarajevo, 71000</p>
+                <p>Email: info@poprativ.com</p>
+                <p>Phone: +387/60-32-39-54</p>
+            </div>
+            <div class="social-icons">
+                <a href="" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+                <a href="" target="_blank"><img src="/images/x.png" alt="X"></a>
+                <a href="" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+                <a href="" target="_blank"><img src="/images/youtube.png" alt="You Tube"></a>
+                <a href="" target="_blank"><img src="/images/tiktok.png" alt="Tik Tok"></a>
+    
+                <!-- Add more social media icons and links here -->
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 PopravIT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        const videos = [
+            { id: 'n4vusY2-rkQ', title: 'How to Repair Rust on Your Car Without Welding ' },
+            { id: 'O1hF25Cowv8', title: 'How to Change Your Oil ' },
+            { id: '6RQ9UabOIPg', title: 'How to Replace Brake Pads and Rotors' },
+            { id: 'QcWELyTbdP4', title: 'How to Replace a Clutch in your Car or Truck ' },
+            { id: 'GcsNu_9_Di8', title: 'How To: Replace a Car Headlight Bulb' },
+            { id: 'UEJbKLZ7RmM', title: 'How to Restore Headlights PERMANENTLY' },
+      
+
+        ];
+
+        const videoList = document.getElementById('video-list');
+
+        videos.forEach(video => {
+            const videoItem = document.createElement('div');
+            videoItem.classList.add('video-item');
+            videoItem.innerHTML = `
+                <img src="https://img.youtube.com/vi/${video.id}/0.jpg" alt="${video.title}" class="thumbnail">
+                <p>${video.title}</p>
+            `;
+            videoItem.addEventListener('click', () => {
+                window.location.href = `./videos/video.html?id=${video.id}&title=${encodeURIComponent(video.title)}`;
+            });
+            videoList.appendChild(videoItem);
+        });
+    </script>
+</body>
+</html>
+
+    
