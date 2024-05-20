@@ -9,21 +9,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Electronics</title>
-    <style>
-        
-        
-    </style>
 </head>
 <body>
-    <h1 style="padding-top: 15vh; text-align: center;">Electronics</h1>
+    <h1 style="padding-top: 19vh; text-align: center;">Electronics</h1>
     <nav class="nav">
 
-        <img class="logo" src="/images/logo.png">
+        <a href="./index.html"><img class="logo" src="/images/logo.png"></a>
     
 </nav>
-    <div id="video-list">
-        
-    </div>
+<<form id="search-form">
+    <input type="text" id="search-query" placeholder="Search YouTube">
+    <button id="search-button" type="submit">Search</button>
+</form>
+<div id="results-wrapper">
+    <h1 id="results-heading"></h1>
+    <div id="video-results"></div>
+</div>
+
+<h1 id="suggestion-heading">Suggested videos</h1>
+    <div id="video-list"></div>
 
      <footer class="footer">
         <div class="footer-container">
@@ -41,16 +45,12 @@
                 <a href="" target="_blank"><img src="/images/youtube.png" alt="You Tube"></a>
                 <a href="" target="_blank"><img src="/images/tiktok.png" alt="Tik Tok"></a>
     
-                <!-- Add more social media icons and links here -->
             </div>
             <div class="footer-text">
                 <p>&copy; 2024 PopravIT. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    
-
     <script>
         const videos = [
             { id: 'BskbY8NJh2o', title: 'How To Fix Microwave Doesnt Heat, Microwave Works But No Heat' },
@@ -78,6 +78,7 @@
             videoList.appendChild(videoItem);
         });
     </script>
+    <script src="./searchVideos.js"></script>
 </body>
 </html>
 
